@@ -49,7 +49,7 @@ func NewServerMetrics(cfg Config) *Metrics {
 		}, []string{"method", "route", "status_code", "ws"}),
 		PerTenantRequestDuration: reg.NewHistogramVec(prometheus.HistogramOpts{
 			Namespace:                       cfg.MetricsNamespace,
-			Name:                            "per_teannt_request_duration_seconds",
+			Name:                            "per_tenant_request_duration_seconds",
 			Help:                            "Time (in seconds) spent serving HTTP requests for a particular tenant.",
 			Buckets:                         instrument.DefBuckets,
 			NativeHistogramBucketFactor:     cfg.MetricsNativeHistogramFactor,

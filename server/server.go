@@ -505,6 +505,7 @@ func BuildHTTPMiddleware(cfg Config, router *mux.Router, metrics *Metrics, logge
 			RouteMatcher:      router,
 			Duration:          metrics.RequestDuration,
 			PerTenantDuration: metrics.PerTenantRequestDuration,
+			PerTenantCallback: cfg.PerTenantDurationInstrumentation,
 			RequestBodySize:   metrics.ReceivedMessageSize,
 			ResponseBodySize:  metrics.SentMessageSize,
 			InflightRequests:  metrics.InflightRequests,
